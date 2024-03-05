@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+#define MAX_SIZE 100
+int linkedList[MAX_SIZE];
+int nextIndex = 0;
+
+void insert(int data) {
+    if (nextIndex < MAX_SIZE) {
+        linkedList[nextIndex] = data;
+        nextIndex++;
+        printf("Inserted %d into the linked list.\n", data);
+    } else {
+        printf("Linked list is full. Cannot insert %d.\n", data);
+    }
+}
+void deleteElement(int data) {
+    int found = 0;
+    for (int i = 0; i < nextIndex; i++) {
+        if (linkedList[i] == data) {
+            found = 1;
+            for (int j = i; j < nextIndex - 1; j++) {
+                linkedList[j] = linkedList[j + 1];
+            }
+            nextIndex--;
+            printf("Deleted %d from the linked list.\n", data);
+            break;
+        }
+    }
+    if (!found) {
+        printf("%d not found in the linked list. Cannot delete.\n", data);
+    }
+}
+
+void display() {
+    if (nextIndex == 0) {
+        printf("Linked list is empty.\n");
+    } else {
+        printf("Linked list elements are: ");
+        for (int i = 0; i < nextIndex; i++) {
+            printf("%d ", linkedList[i]);
+        }
+        printf("\n");
+    }
+}
+int main() {
+    insert(10);
+    insert(20);
+    insert(30);
+    display();
+    deleteElement(20);
+    display();
+    return 0;
+}
+
+
+
+
