@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{	int a[5],low=0,high=4,mid,value,i,f=0;
+ printf("enter an array :");
+
+	for(i=0;i<=5;i++)
+	{
+		scanf("%d",&a[i]);	
+	}
+	printf("enter value to search:");
+	scanf("%d",&value);
+	while(low<=high)
+	{
+		mid=(low+high)/2;
+		if(a[mid]==value)	
+	{
+		f=1;
+		break;
+	}
+	if(a[mid]<value)
+	low=mid+1; 
+	else
+	high=mid-1;
+	
+}
+  if (f==1)
+printf("found in array %d",mid);
+else
+printf("not found");
+return 0;
+}
