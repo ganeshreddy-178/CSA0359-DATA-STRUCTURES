@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+
+{
+	int a[6],i;
+	printf("enter array");
+	for(i=0;i<6;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<6;i++)
+	{
+		if(a[i]%2==0)
+		{
+			printf("even =");
+			printf("%d",a[i]);
+		}
+		else
+		{
+			printf("odd");
+		printf("%d",a[i]);
+		}
+}
+}
+
